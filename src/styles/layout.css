@@ -1,0 +1,16 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.app-container {
+  display: grid;
+  grid-template-rows: auto 1fr auto; /* Header, Main (flexible), Footer */
+  min-height: 100vh;
+}
+
+.container {
+  margin: auto;
+  max-width: var(--container-max-width);
+}

@@ -1,0 +1,10 @@
+.footer {
+  background-color: var(--primary-dark-green);
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.footer-container {
+  margin: 0 auto;
+}

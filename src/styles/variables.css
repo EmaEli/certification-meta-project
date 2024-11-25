@@ -1,0 +1,18 @@
+:root {
+  /* Colors */
+  --primary-dark-green: #495e57;
+  --primary-yellow: #f4ce14;
+  --secondary-salmon: #ee9972;
+  --secondary-light-salmon: #fbdabb;
+  --highlight-light-gray: #edefee;
+  --highlight-dark-gray: #333333;
+
+    /* Layout */
+    --container-max-width: 1100px;
+    --container-padding: 20px;
+}
+
+body {
+  background-color: var(--highlight-light-gray);
+  color: var(--highlight-dark-gray);
+}
