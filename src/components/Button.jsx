@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 function Button({
-  onClick, // Optional, no default value here
+  onClick,
   label,
   variant = "default",
   disabled = false,
@@ -10,7 +10,6 @@ function Button({
   rightIcon = null,
   className = "",
 }) {
-  // Determine the class for the button based on props
   const buttonClass = `button ${
     variant === "outline"
       ? "button-outline"
@@ -23,7 +22,8 @@ function Button({
     <button
       className={buttonClass}
       onClick={onClick}
-      disabled={disabled} // Native disabled handling
+      disabled={disabled}
+      aria-label={label}
     >
       {leftIcon && <span className="icon-left">{leftIcon}</span>}
       <span className="button-label">{label}</span>
@@ -33,13 +33,13 @@ function Button({
 }
 
 Button.propTypes = {
-  onClick: PropTypes.func, // Non obbligatorio
-  label: PropTypes.string.isRequired, // Necessario per identificare il bottone
-  variant: PropTypes.oneOf(["default", "outline", "ghost"]), // Stile del bottone
-  disabled: PropTypes.bool, // Se disabilitato o meno
-  leftIcon: PropTypes.node, // Icona opzionale a sinistra
-  rightIcon: PropTypes.node, // Icona opzionale a destra
-  className: PropTypes.string, // Classe CSS aggiuntiva
+  onClick: PropTypes.func,
+  label: PropTypes.string.isRequired,
+  variant: PropTypes.oneOf(["default", "outline", "ghost"]),
+  disabled: PropTypes.bool,
+  leftIcon: PropTypes.node,
+  rightIcon: PropTypes.node,
+  className: PropTypes.string,
 };
 
 export default Button;

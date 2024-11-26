@@ -13,7 +13,7 @@ body, html {
 .container {
   margin: auto;
   max-width: var(--container-max-width);
-  box-sizing: border-box; /* Include padding e bordi nel calcolo di max-width */
+  box-sizing: border-box;
 }
 
 @media (max-width: 768px) {
@@ -21,4 +21,17 @@ body, html {
     box-sizing: border-box;
     margin: auto;
   }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
 }

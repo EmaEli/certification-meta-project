@@ -13,6 +13,7 @@ function TestimonialsCard({ name, feedback, rating, image }) {
           key={i}
           icon={i < rating ? fullStar : emptyStar}
           className="testimonial-star"
+          aria-label={i < rating ? "Full star" : "Empty star"}
         />
       );
     }
@@ -20,19 +21,23 @@ function TestimonialsCard({ name, feedback, rating, image }) {
   };
 
   return (
-    <div className="testimonial-card">
+    <div className="testimonial-card" role="article" aria-labelledby={`${name}-testimonial`}>
       <div className="testimonial-card-header">
         <img
           src={image}
-          alt={name}
+          alt={`${name}`}
           className="testimonial-image"
         />
         <div>
-          <p className="testimonial-name">{name}</p>
-          <div className="testimonial-rating">{renderStars()}</div>
+          <p id={`${name}-testimonial`} className="testimonial-name">{name}</p>
+          <div className="testimonial-rating" aria-label={`Rating: ${rating} out of 5`}>
+            {renderStars()}
+          </div>
         </div>
       </div>
-      <p className="testimonial-feedback">"{feedback}"</p>
+      <p className="testimonial-feedback" aria-label="Feedback">
+        "{feedback}"
+      </p>
     </div>
   );
 }

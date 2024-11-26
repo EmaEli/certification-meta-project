@@ -28,24 +28,28 @@ function Specials() {
       id: uuidv4(),
       image: lemonDessertImage,
       title: "Lemon Dessert",
-      price: 5.00,
+      price: 5.0,
       description:
         "This comes straight from grandma's recipe book, every last ingredient has been sourced and is as authentic as can be imagined.",
     },
   ];
 
   return (
-    <section className="specials container">
+    <section
+      className="specials container"
+      aria-labelledby="specials-title"
+    >
       <div className="specials-header">
-        <h2>This Week Specials!</h2>
+        <h2 id="specials-title">This Week's Specials!</h2>
 
         <Button
           onClick={() => console.log("Online Menu")}
           label="Online Menu"
+          aria-label="View the full online menu"
         />
       </div>
 
-      <div className="specials-items">
+      <div className="specials-items" role="list">
         {specialsData.map((special) => (
           <SpecialCard
             key={special.id}
@@ -54,6 +58,7 @@ function Specials() {
             price={special.price}
             description={special.description}
             onOrder={() => alert(`Ordered: ${special.title}`)}
+            aria-label={`Special item: ${special.title}`}
           />
         ))}
       </div>

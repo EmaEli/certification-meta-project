@@ -1,4 +1,4 @@
-// Funzione per generare numeri pseudo-casuali basati su un seed
+// Function to generate pseudo-random numbers based on a seed
 const seededRandom = function (seed) {
   var m = 2**35 - 31;
   var a = 185852;
@@ -8,7 +8,7 @@ const seededRandom = function (seed) {
   };
 };
 
-// Simula il recupero degli orari disponibili per una data specifica
+// Simulate retrieving available times for a specific date
 export const fetchAPI = function (date) {
   let result = [];
   let random = seededRandom(date.getDate());
@@ -24,7 +24,7 @@ export const fetchAPI = function (date) {
   return result;
 };
 
-// Simula l'invio del modulo
+// Simulate submitting the form
 export const submitAPI = function (formData) {
   return true;
 };

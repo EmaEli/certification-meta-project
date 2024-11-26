@@ -12,7 +12,7 @@ function App() {
     <div className="app-container">
       <Router>
         <Header />
-        <main>
+        <main role="main" aria-label="Main Content">
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/booking" element={<ReservationManager />} />

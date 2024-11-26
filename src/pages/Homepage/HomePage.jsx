@@ -6,12 +6,12 @@ import Chicago from "./Chicago";
 
 function HomePage() {
   return (
-    <div className="homepage">
+    <main className="homepage" aria-labelledby="homepage-title">
       <CallToAction />
       <Specials />
       <CustomersSay />
       <Chicago />
-    </div>
+    </main>
   );
 }
 

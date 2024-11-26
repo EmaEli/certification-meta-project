@@ -5,10 +5,12 @@ import OverlayImages from "../../components/OverlayImages";
 
 function Chicago() {
   return (
-    <section className="chicago">
+    <section className="chicago" aria-labelledby="chicago-title">
       <div className="container chicago-container">
         <div className="chicago-text">
-          <h2 className="section-title">Our Story</h2>
+          <h2 id="chicago-title" className="section-title">
+            Our Story
+          </h2>
           <p>
             Little Lemon is a family-owned Mediterranean restaurant located in
             the heart of Chicago. Our dishes are inspired by traditional
@@ -25,9 +27,9 @@ function Chicago() {
         <div className="chicago-image-container">
           <OverlayImages
             primaryImg={resturantFood}
-            primaryAlt="Two chefs smiling"
+            primaryAlt="A beautifully arranged table with Mediterranean food"
             secondaryImg={resturantChef}
-            secondaryAlt="Chef preparing food"
+            secondaryAlt="Chef preparing food in the kitchen"
           />
         </div>
       </div>

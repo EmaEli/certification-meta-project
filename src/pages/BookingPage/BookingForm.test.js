@@ -91,7 +91,7 @@ describe("BookingForm Component", () => {
     expect(mockSubmitForm).toHaveBeenCalledWith({
       date: "2024-11-29",
       time: "18:00",
-      guests: 4, // Converti "guests" in un numero se necessario
+      guests: 4,
       occasion: "",
     });
   });

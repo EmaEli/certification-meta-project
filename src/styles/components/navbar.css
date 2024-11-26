@@ -6,7 +6,7 @@
 .nav-list {
   list-style: none;
   display: flex;
-  gap: 1.25rem; /* 20px -> 1.25rem */
+  gap: 1.25rem;
   margin: 0;
   padding: 0;
 }
@@ -21,22 +21,21 @@
   text-decoration: underline;
 }
 
-/* Media Query per dispositivi piccoli */
-@media (max-width: 48rem) { /* 768px -> 48rem */
+@media (max-width: 48rem) {
   .navbar {
-    display: none; /* Nascondere il menu per schermi piccoli */
+    display: none;
     flex-direction: column;
     width: 100%;
     background-color: var(--basic-white);
   }
 
   .navbar.show {
-    display: flex; /* Mostrare il menu quando attivato */
+    display: flex;
   }
 
   .nav-list {
     flex-direction: column;
-    gap: 0.625rem; /* 10px -> 0.625rem */
+    gap: 0.625rem;
   }
 }
 
@@ -48,11 +47,11 @@
 }
 
 .menu-icon {
-  font-size: 1.5rem; /* Icona di 24px -> 1.5rem */
+  font-size: 1.5rem;
   color: var(--highlight-dark-gray);
 }
 
-@media (max-width: 48rem) { /* 768px -> 48rem */
+@media (max-width: 48rem) {
   .menu-toggle {
     display: block;
   }

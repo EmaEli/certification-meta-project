@@ -39,18 +39,21 @@ function CustomersSay() {
   ];
 
   return (
-    <section className="customers-say">
+    <section className="customers-say" aria-labelledby="customers-say-title">
       <div className="container">
-        <h2>What Customers Say</h2>
-        <div className="testimonials-grid">
-          {testimonials.map((testimonial, index) => (
-            <TestimonialsCard
-              key={index}
-              name={testimonial.name}
-              feedback={testimonial.feedback}
-              rating={testimonial.rating}
-              image={testimonial.image}
-            />
+        <h2 id="customers-say-title" className="section-title">
+          What Customers Say
+        </h2>
+        <div className="testimonials-grid" role="list">
+          {testimonials.map((testimonial) => (
+            <div key={testimonial.id} role="listitem">
+              <TestimonialsCard
+                name={testimonial.name}
+                feedback={testimonial.feedback}
+                rating={testimonial.rating}
+                image={testimonial.image}
+              />
+            </div>
           ))}
         </div>
       </div>

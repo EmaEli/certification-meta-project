@@ -10,8 +10,13 @@ function Logo({ variant = "horizontal", className = "" }) {
 
   return (
     <div className={`logo-container ${className}`}>
-      <Link to="/">
-        <img src={logoSrc} alt="Little Lemon Logo" className={logoClass} />
+      <Link to="/" aria-label="Navigate to Home">
+        <img
+          src={logoSrc}
+          alt="Little Lemon Logo"
+          className={logoClass}
+          aria-hidden="true"
+        />
       </Link>
     </div>
   );

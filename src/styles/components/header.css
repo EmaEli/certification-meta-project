@@ -1,7 +1,7 @@
 .header {
   background-color: var(--basic-white);
   border-bottom: 1px solid var(--highlight-light-gray);
-  padding: 1.25rem 0; /* 20px -> 1.25rem */
+  padding: 1.25rem 0;
 }
 
 .header-container {
@@ -10,8 +10,7 @@
   align-items: center;
 }
 
-/* Media Query per dispositivi piccoli */
-@media (max-width: 48rem) { /* 768px -> 48rem */
+@media (max-width: 48rem) {
   .header-container {
     width: 100%;
     display: flex;

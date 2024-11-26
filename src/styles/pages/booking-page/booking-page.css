@@ -60,15 +60,15 @@
 .booking-info-details h2 {
   font-family: "Markazi Text", serif;
   font-size: 1.5rem;
-  margin-bottom: 0.25rem; /* Riduce lo spazio sotto il titolo */
+  margin-bottom: 0.25rem;
   color: var(--primary-dark-green);
 }
 
 .booking-info-details p {
   font-family: "Karla", sans-serif;
   font-size: 1rem;
-  margin-bottom: 1rem; /* Spazio inferiore uniforme tra i paragrafi */
-  margin-top: 0; /* Rimuove eventuale margine superiore */
+  margin-bottom: 1rem;
+  margin-top: 0;
   color: var(--highlight-dark-gray);
 }
 

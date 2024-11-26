@@ -1,7 +1,7 @@
 .call-to-action {
   background-color: var(--primary-dark-green);
   color: var(--basic-white);
-  padding: 4.375rem 0 1.875rem; /* 70px 0 30px */
+  padding: 3rem 0;
   position: relative;
 }
 
@@ -24,8 +24,8 @@
 
 .call-to-action-text h1 {
   color: var(--primary-yellow);
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
+  font-size: 4rem;
+  margin-bottom: -0.5rem;
 }
 
 .call-to-action-text h2 {
@@ -52,7 +52,6 @@
   z-index: 1;
 }
 
-/* Responsività per schermi medi */
 @media (max-width: 1024px) {
   .call-to-action img {
     width: 200px;
@@ -60,7 +59,6 @@
   }
 }
 
-/* Responsività per schermi piccoli */
 @media (max-width: 768px) {
   .container {
     flex-direction: column;

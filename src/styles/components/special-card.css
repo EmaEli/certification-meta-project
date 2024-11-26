@@ -76,18 +76,18 @@
   background-color: transparent;
   color: var(--primary-dark-green);
   transition: background-color 0.3s ease;
-  overflow: hidden; /* Nasconde le parti fuori dal contenitore */
-  position: relative; /* Necessario per il posizionamento assoluto dell'icona */
+  overflow: hidden;
+  position: relative;
 }
 
 .animate-icon-button .icon-right {
   display: inline-block;
   margin-left: 8px;
   position: relative;
-  transition: none; /* Rimuoviamo la transizione normale */
+  transition: none;
 }
 
-/* Keyframe per uscire verso destra */
+/* Keyframe to exit right */
 @keyframes slide-out {
   0% {
     transform: translateX(0);
@@ -97,7 +97,7 @@
   }
 }
 
-/* Keyframe per rientrare da sinistra */
+/* Keyframe to indent from the left */
 @keyframes slide-in {
   0% {
     transform: translateX(-150%);
@@ -107,12 +107,12 @@
   }
 }
 
-/* Uscita dell'icona verso destra */
+/* Exit icon to the right */
 .animate-icon-button:hover .icon-right {
-  animation: slide-out 0.9s forwards; /* Applica l'animazione verso destra */
+  animation: slide-out 0.9s forwards;
 }
 
-/* Rientro dell'icona da sinistra */
+/* Indent icon from left */
 .animate-icon-button:not(:hover) .icon-right {
-  animation: slide-in 0.9s forwards; /* Applica l'animazione per rientrare */
+  animation: slide-in 0.9s forwards;
 }

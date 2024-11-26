@@ -10,6 +10,10 @@
   margin: 0 auto;
 }
 
+.footer-logo{
+  display: flex;
+}
+
 .footer-logo.logo-container {
   margin-right: 3.75rem;
 }
@@ -35,11 +39,27 @@
 .footer-section ul li a {
   color: var(--basic-white);
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-section ul li a:hover {
+  color: var(--primary-yellow);
+  text-decoration: underline;
+}
+
+.footer-section ul li span {
+  color: var(--basic-white);
+}
+
+.footer-section ul li:hover span {
+  color: var(--primary-yellow);
 }
 
 .footer-section ul li:hover {
-  color: var(--primary-yellow);
+  cursor: pointer;
 }
 
 .footer-credit {

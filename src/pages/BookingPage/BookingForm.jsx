@@ -35,8 +35,15 @@ function BookingForm({ availableTimes, updateAvailableTimes, submitForm }) {
   };
 
   return (
-    <form className="booking-form" onSubmit={handleSubmit} noValidate>
-      <h1 className="booking-form-title">Book a Table</h1>
+    <form
+      className="booking-form"
+      onSubmit={handleSubmit}
+      noValidate
+      aria-labelledby="booking-form-title"
+    >
+      <h1 id="booking-form-title" className="booking-form-title">
+        Book a Table
+      </h1>
 
       <div className="form-group">
         <label htmlFor="res-date">Choose date *</label>
@@ -47,6 +54,7 @@ function BookingForm({ availableTimes, updateAvailableTimes, submitForm }) {
           min={today}
           onChange={handleDateChange}
           required
+          aria-required="true"
         />
       </div>
 
@@ -57,8 +65,11 @@ function BookingForm({ availableTimes, updateAvailableTimes, submitForm }) {
           value={time}
           onChange={(e) => setTime(e.target.value)}
           required
+          aria-required="true"
         >
-          <option value="">Select a time</option>
+          <option value="" disabled>
+            Select a time
+          </option>
           {availableTimes.map((time) => (
             <option key={time} value={time}>
               {time}
@@ -77,6 +88,7 @@ function BookingForm({ availableTimes, updateAvailableTimes, submitForm }) {
           min="1"
           max="10"
           required
+          aria-required="true"
         />
       </div>
 
@@ -86,8 +98,11 @@ function BookingForm({ availableTimes, updateAvailableTimes, submitForm }) {
           id="occasion"
           value={occasion}
           onChange={(e) => setOccasion(e.target.value)}
+          aria-label="Select occasion"
         >
-          <option value="">Select an occasion</option>
+          <option value="" disabled>
+            Select an occasion
+          </option>
           <option value="Birthday">Birthday</option>
           <option value="Anniversary">Anniversary</option>
         </select>
@@ -97,7 +112,8 @@ function BookingForm({ availableTimes, updateAvailableTimes, submitForm }) {
         label="Submit Reservation"
         type="submit"
         disabled={!isFormValid({ date, time, guests })}
-        onClick={() => {}}
+        aria-label="Submit your reservation"
+        className="submit-button"
       />
     </form>
   );

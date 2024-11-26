@@ -19,7 +19,7 @@
   padding: 32px 0;
 }
 
-/* Breakpoint per tablet (max-width: 1024px) */
+/* Breakpoint for tablet (max-width: 1024px) */
 @media (max-width: 1024px) {
   .specials-items {
     justify-content: center;
@@ -27,7 +27,7 @@
   }
 }
 
-/* Breakpoint per mobile (max-width: 768px) */
+/* Breakpoint for mobile (max-width: 768px) */
 @media (max-width: 768px) {
   .specials {
     margin-top: 0;
