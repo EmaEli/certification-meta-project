@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import HomePage from "./pages/Homepage/HomePage";
 import ReservationManager from "./pages/BookingPage/ReservationManager";
+import ConfirmedBooking from "./pages/BookingPage/ConfirmedBooking";
 import './styles/index.css';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/booking" element={<ReservationManager />} />
+            <Route path="/booking-confirmed" element={<ConfirmedBooking />} />
           </Routes>
         </main>
         <Footer />

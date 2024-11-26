@@ -1,6 +1,7 @@
 import React, { useReducer } from "react";
 import BookingPage from "./BookingPage";
-import { fetchAPI } from "../../utils/api"; // Importa fetchAPI
+import { useNavigate } from "react-router-dom";
+import { fetchAPI, submitAPI } from "../../utils/api"; // Importa fetchAPI
 
 // Funzione che inizializza lo stato degli orari disponibili
 export const initializeTimes = () => {
@@ -19,21 +20,28 @@ export const updateTimes = (state, action) => {
   }
 };
 
-
 function ReservationManager() {
-    const [availableTimes, dispatch] = useReducer(updateTimes, [], initializeTimes);
+  const navigate = useNavigate();
+  const [availableTimes, dispatch] = useReducer(updateTimes, [], initializeTimes);
 
-    const updateAvailableTimes = (date) => {
-      const selectedDate = date instanceof Date ? date : new Date(date);
-      dispatch({ type: "UPDATE", payload: selectedDate });
+  const updateAvailableTimes = (date) => {
+    const selectedDate = date instanceof Date ? date : new Date(date);
+    dispatch({ type: "UPDATE", payload: selectedDate });
   };
-  
+
+  const submitForm = (formData) => {
+    if (submitAPI(formData)) {
+      navigate("/booking-confirmed");
+    }
+  };
 
     return (
-        <BookingPage
-            availableTimes={availableTimes}
-            updateAvailableTimes={updateAvailableTimes}
-        />
+      <BookingPage
+        availableTimes={availableTimes}
+        updateAvailableTimes={updateAvailableTimes}
+        submitForm={submitForm}
+      />
+
     );
 }
 

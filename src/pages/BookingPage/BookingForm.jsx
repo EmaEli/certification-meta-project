@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import Button from "../../components/Button";
 
-function BookingForm({ availableTimes, updateAvailableTimes }) {
+export const isFormValid = ({ date, time, guests }) => {
+  return Boolean(date && time && guests > 0 && guests <= 10);
+};
+
+function BookingForm({ availableTimes, updateAvailableTimes, submitForm }) {
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [guests, setGuests] = useState(1);
@@ -17,14 +21,23 @@ function BookingForm({ availableTimes, updateAvailableTimes }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(
-      `Booking confirmed for ${guests} guests on ${date} at ${time} for a ${occasion || "no special occasion"}.`
-    );
+    const formData = {
+      date,
+      time,
+      guests,
+      occasion,
+    };
+    if (isFormValid({ date, time, guests })) {
+      submitForm(formData);
+    } else {
+      console.error("Form is invalid");
+    }
   };
 
   return (
-    <form className="booking-form" onSubmit={handleSubmit}>
+    <form className="booking-form" onSubmit={handleSubmit} noValidate>
       <h1 className="booking-form-title">Book a Table</h1>
+
       <div className="form-group">
         <label htmlFor="res-date">Choose date *</label>
         <input
@@ -60,7 +73,7 @@ function BookingForm({ availableTimes, updateAvailableTimes }) {
           type="number"
           id="guests"
           value={guests}
-          onChange={(e) => setGuests(e.target.value)}
+          onChange={(e) => setGuests(Number(e.target.value))}
           min="1"
           max="10"
           required
@@ -80,7 +93,12 @@ function BookingForm({ availableTimes, updateAvailableTimes }) {
         </select>
       </div>
 
-      <Button label="Submit Reservation" type="submit" onClick={() => console.log("Submit Reservation")} />
+      <Button
+        label="Submit Reservation"
+        type="submit"
+        disabled={!isFormValid({ date, time, guests })}
+        onClick={() => {}}
+      />
     </form>
   );
 }
