@@ -1,21 +1,21 @@
 @font-face {
   font-family: 'Markazi Text';
   src: url('../assets/fonts/MarkaziText-VariableFont_wght.ttf') format('truetype');
-  font-weight: 300 700; /* Intervallo dei pesi supportati */
+  font-weight: 300 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Karla';
   src: url('../assets/fonts/Karla-VariableFont_wght.ttf') format('truetype');
-  font-weight: 300 700; /* Intervallo dei pesi supportati */
+  font-weight: 300 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Karla';
   src: url('../assets/fonts/Karla-Italic-VariableFont_wght.ttf') format('truetype');
-  font-weight: 300 700; /* Intervallo dei pesi supportati */
+  font-weight: 300 700;
   font-style: italic;
 }
 
@@ -33,7 +33,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 48px;
+  font-size: 72px;
   font-weight: bold;
 }
 
@@ -49,4 +49,5 @@ h3 {
 
 p {
   font-size: 16px;
+  margin: 24px 0;
 }

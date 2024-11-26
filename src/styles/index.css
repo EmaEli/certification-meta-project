@@ -4,11 +4,20 @@
 @import './variables.css';
 @import './layout.css';
 @import './buttons.css';
-@import './header.css';
-@import './shadows.css';
 
 /* Components */
-@import './header.css';
-@import './navbar.css';
-@import './main.css';
-@import './footer.css';
+@import './components/header.css';
+@import './components/navbar.css';
+@import './components/footer.css';
+@import './components/special-card.css';
+@import './components/testimonial-card.css';
+@import './components/overlay-images.css';
+@import './components/logo.css';
+
+/* Pages */
+@import './pages/home-page/home-page.css';
+@import './pages/home-page/call-to-action.css';
+@import './pages/home-page/chicago.css';
+@import './pages/home-page/customers-say';
+@import './pages/home-page/specials';
+@import './pages/booking-page/booking-page.css';

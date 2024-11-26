@@ -6,10 +6,33 @@
   --secondary-light-salmon: #fbdabb;
   --highlight-light-gray: #edefee;
   --highlight-dark-gray: #333333;
+  --basic-white: #ffffff;
+  --basic-black: #000000;
 
-    /* Layout */
-    --container-max-width: 1100px;
-    --container-padding: 20px;
+    /* Tipography */
+    --font-family-primary: 'Markazi Text', serif;
+    --font-family-secondary: 'Karla', sans-serif;
+
+    --font-size-small: 14px;
+    --font-size-medium: 16px;
+    --font-size-large: 20px;
+    --font-size-title: 48px;
+
+    --font-weight-regular: 400;
+    --font-weight-bold: 700;
+
+  /* Border Radius */
+  --border-radius-large: 16px;
+  --border-radius-medium: 8px;
+
+    /* Shadow */
+  --shadow-light: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-medium: 0 4px 8px rgba(0, 0, 0, 0.2);
+  --shadow-strong: 0 6px 12px rgba(0, 0, 0, 0.3);
+
+  /* Layout */
+  --container-max-width: 960px;
+  --container-padding: 20px;
 }
 
 body {

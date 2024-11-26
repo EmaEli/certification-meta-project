@@ -1,0 +1,14 @@
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 24px;
+}
+
+.logo {
+  height: 60px;
+}
+
+.logo-vertical {
+  width: 120px;
+}

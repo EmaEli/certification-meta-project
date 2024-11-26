@@ -1,0 +1,42 @@
+.image-overlay {
+  position: relative; /* Contenitore per il posizionamento assoluto */
+  width: 250px; /* Larghezza totale del contenitore */
+  height: 400px; /* Altezza totale del contenitore */
+  overflow: visible; /* Nasconde eventuali overflow */
+}
+
+.image {
+  border-radius: 16px; /* Bordi arrotondati */
+  object-fit: cover; /* Ritaglia le immagini in base al contenitore */
+  position: absolute; /* Necessario per la sovrapposizione */
+  transition: transform 0.5s ease, z-index 0.5s ease; /* Transizione per scambio fluido */
+}
+
+.image-primary {
+  width: 200px; /* Dimensione immagine principale */
+  height: 300px;
+  top: 0;
+  left: 50px;
+  z-index: 2; /* Sopra la secondaria */
+  transform: translate(0, 0); /* Posizione iniziale */
+}
+
+.image-secondary {
+  width: 200px; /* Dimensione immagine secondaria */
+  height: 300px;
+  top: 80px;
+  left: -20px;
+  z-index: 1; /* Dietro la primaria */
+  transform: translate(0, 0); /* Posizione iniziale */
+}
+
+/* Effetto hover: scambio delle posizioni */
+.image-overlay:hover .image-primary {
+  transform: translate(-45px, 80px); /* Sposta l'immagine primaria in basso a sinistra */
+  z-index: 1; /* Porta la primaria dietro */
+}
+
+.image-overlay:hover .image-secondary {
+  transform: translate(50px, -80px); /* Sposta l'immagine secondaria in alto a destra */
+  z-index: 2; /* Porta la secondaria sopra */
+}
