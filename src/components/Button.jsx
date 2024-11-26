@@ -2,13 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function Button({
-  onClick,
+  onClick = () => null,
   label,
   variant = 'default',
   disabled = false,
   leftIcon = null,
   rightIcon = null,
-  className = '', // Aggiunta del supporto per una classe personalizzata
+  className = '',
 }) {
   const buttonClass = `button ${
     variant === 'outline'
@@ -16,7 +16,7 @@ function Button({
       : variant === 'ghost'
       ? 'button-ghost'
       : ''
-  } ${disabled ? 'button-disabled' : ''} ${className}`; // Includi la classe personalizzata
+  } ${disabled ? 'button-disabled' : ''} ${className}`;
 
   return (
     <button
@@ -39,7 +39,7 @@ Button.propTypes = {
   disabled: PropTypes.bool,
   leftIcon: PropTypes.node,
   rightIcon: PropTypes.node,
-  className: PropTypes.string, // Validazione per la classe personalizzata
+  className: PropTypes.string,
 };
 
 export default Button;

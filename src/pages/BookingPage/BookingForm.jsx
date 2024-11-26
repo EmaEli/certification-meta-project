@@ -1,39 +1,44 @@
 import React, { useState } from "react";
 import Button from "../../components/Button";
 
-function BookingForm() {
+function BookingForm({ availableTimes, updateAvailableTimes }) {
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [guests, setGuests] = useState(1);
   const [occasion, setOccasion] = useState("");
-  const [availableTimes] = useState([
-    "17:00",
-    "18:00",
-    "19:00",
-    "20:00",
-    "21:00",
-  ]);
+
+  const today = new Date().toISOString().split("T")[0];
+
+  const handleDateChange = (e) => {
+    const selectedDate = new Date(e.target.value);
+    setDate(e.target.value);
+    updateAvailableTimes(selectedDate);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(`Booking confirmed for ${guests} guests on ${date} at ${time} for a ${occasion}.`);
+    alert(
+      `Booking confirmed for ${guests} guests on ${date} at ${time} for a ${occasion || "no special occasion"}.`
+    );
   };
 
   return (
     <form className="booking-form" onSubmit={handleSubmit}>
+      <h1 className="booking-form-title">Book a Table</h1>
       <div className="form-group">
-        <label htmlFor="res-date">Choose date</label>
+        <label htmlFor="res-date">Choose date *</label>
         <input
           type="date"
           id="res-date"
           value={date}
-          onChange={(e) => setDate(e.target.value)}
+          min={today}
+          onChange={handleDateChange}
           required
         />
       </div>
 
       <div className="form-group">
-        <label htmlFor="res-time">Choose time</label>
+        <label htmlFor="res-time">Choose time *</label>
         <select
           id="res-time"
           value={time}
@@ -50,7 +55,7 @@ function BookingForm() {
       </div>
 
       <div className="form-group">
-        <label htmlFor="guests">Number of guests</label>
+        <label htmlFor="guests">Number of guests *</label>
         <input
           type="number"
           id="guests"
@@ -68,7 +73,6 @@ function BookingForm() {
           id="occasion"
           value={occasion}
           onChange={(e) => setOccasion(e.target.value)}
-          required
         >
           <option value="">Select an occasion</option>
           <option value="Birthday">Birthday</option>
@@ -76,7 +80,7 @@ function BookingForm() {
         </select>
       </div>
 
-      <Button label="Submit Reservation" type="submit" />
+      <Button label="Submit Reservation" type="submit" onClick={() => console.log("Submit Reservation")} />
     </form>
   );
 }

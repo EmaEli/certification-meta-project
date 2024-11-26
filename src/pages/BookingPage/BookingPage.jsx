@@ -2,13 +2,17 @@ import React from "react";
 import BookingForm from "./BookingForm";
 import restaurantImage from "../../assets/images/book-a-table.jpg"
 
-function BookingPage() {
+function BookingPage({ availableTimes, updateAvailableTimes }) {
   return (
     <section className="booking-page">
       <div className="booking-container container">
       <h1 className="booking-form-title">Book a Table</h1>
         <div className="booking-content">
-          <BookingForm />
+          <BookingForm
+            availableTimes={availableTimes}
+            updateAvailableTimes={updateAvailableTimes}
+          />
+
           <div className="booking-info">
             <img
               src={restaurantImage}
