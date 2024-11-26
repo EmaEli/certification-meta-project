@@ -13,4 +13,12 @@ body, html {
 .container {
   margin: auto;
   max-width: var(--container-max-width);
+  box-sizing: border-box; /* Include padding e bordi nel calcolo di max-width */
+}
+
+@media (max-width: 768px) {
+  .container {
+    box-sizing: border-box;
+    margin: auto;
+  }
 }

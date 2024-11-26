@@ -13,8 +13,8 @@ function CallToAction() {
           <h1>Little Lemon</h1>
           <h2>Chicago</h2>
           <p>
-            We are a family-owned Mediterranean restaurant, focused on traditional
-            recipes served with a modern twist.
+          We are a family-owned Mediterranean restaurant that blends traditional recipes with a modern twist.
+          Experience the vibrant flavors of the Mediterranean in a warm and welcoming setting.
           </p>
 
           <Button

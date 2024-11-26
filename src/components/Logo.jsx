@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 import logo from "../assets/images/logo/logo.png";
 import logoVerticalWhite from "../assets/images/logo/logoVerticalWhite.png";
 
@@ -9,7 +10,9 @@ function Logo({ variant = "horizontal", className = "" }) {
 
   return (
     <div className={`logo-container ${className}`}>
-      <img src={logoSrc} alt="Little Lemon Logo" className={logoClass} />
+      <Link to="/">
+        <img src={logoSrc} alt="Little Lemon Logo" className={logoClass} />
+      </Link>
     </div>
   );
 }

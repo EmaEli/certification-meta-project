@@ -35,3 +35,13 @@
   margin: 10px 0 0 0;
   padding: 0;
 }
+
+.testimonial-rating {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.testimonial-star {
+  color: var(--primary-yellow);
+  font-size: 0.8rem;
+}
