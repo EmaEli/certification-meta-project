@@ -17,6 +17,7 @@ export const updateTimes = (state, action) => {
         action.payload instanceof Date ? action.payload : new Date(action.payload);
       return fetchAPI(date);
     default:
+      console.warn(`Unhandled action type: ${action.type}`); // Log for debugging
       return state;
   }
 };

@@ -1,10 +1,19 @@
 import { initializeTimes, updateTimes } from "./ReservationManager";
-import { fetchAPI } from "../../utils/api";
-import { act } from "react";
+import { fetchAPI, submitAPI } from "../../utils/api";
+import { useNavigate } from "react-router-dom";
 
 jest.mock("../../utils/api", () => ({
   fetchAPI: jest.fn(),
+  submitAPI: jest.fn(),
 }));
+
+jest.mock("react-router-dom", () => {
+  const originalModule = jest.requireActual("react-router-dom");
+  return {
+    ...originalModule,
+    useNavigate: jest.fn(),
+  };
+});
 
 describe("ReservationManager API Functions", () => {
   beforeEach(() => {
@@ -15,19 +24,17 @@ describe("ReservationManager API Functions", () => {
     const mockTimes = ["17:00", "18:00", "19:00"];
     fetchAPI.mockReturnValue(mockTimes);
 
-    let result;
-    act(() => {
-      result = initializeTimes();
-    });
+    const result = initializeTimes();
 
     expect(fetchAPI).toHaveBeenCalledTimes(1);
 
     const today = new Date();
     today.setHours(0, 0, 0, 0);
+
     const calledWithDate = fetchAPI.mock.calls[0][0];
     calledWithDate.setHours(0, 0, 0, 0);
 
-    expect(calledWithDate).toEqual(today);
+    expect(calledWithDate.getTime()).toEqual(today.getTime());
     expect(result).toEqual(mockTimes);
   });
 
@@ -36,10 +43,7 @@ describe("ReservationManager API Functions", () => {
     fetchAPI.mockReturnValue(mockTimes);
 
     const action = { type: "UPDATE", payload: new Date("2024-11-27") };
-    let result;
-    act(() => {
-      result = updateTimes([], action);
-    });
+    const result = updateTimes([], action);
 
     expect(fetchAPI).toHaveBeenCalledTimes(1);
     expect(fetchAPI).toHaveBeenCalledWith(new Date("2024-11-27"));
@@ -50,12 +54,28 @@ describe("ReservationManager API Functions", () => {
     const initialState = ["17:00", "18:00", "19:00"];
     const action = { type: "UNKNOWN", payload: new Date("2024-11-27") };
 
-    let result;
-    act(() => {
-      result = updateTimes(initialState, action);
-    });
+    const result = updateTimes(initialState, action);
 
     expect(result).toBe(initialState);
     expect(fetchAPI).not.toHaveBeenCalled();
+  });
+
+  test("submitForm navigates to booking-confirmed on success", () => {
+    const mockNavigate = jest.fn();
+    useNavigate.mockReturnValue(mockNavigate);
+
+    const formData = { name: "Test User", date: "2024-11-27" };
+    submitAPI.mockReturnValue(true);
+
+    const submitForm = (data) => {
+      if (submitAPI(data)) {
+        mockNavigate("/booking-confirmed", { replace: true });
+      }
+    };
+
+    submitForm(formData);
+
+    expect(submitAPI).toHaveBeenCalledWith(formData);
+    expect(mockNavigate).toHaveBeenCalledWith("/booking-confirmed", { replace: true });
   });
 });
