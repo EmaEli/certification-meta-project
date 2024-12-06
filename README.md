@@ -1,70 +1,60 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Little Lemon Table Reservation System
+![](./public/mockup-little-lemon.jpg)
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+This project is the capstone for the Meta Front End Developer Certification. It is a table reservation system for the fictional restaurant Little Lemon, built with React. The application uses semantic HTML and CSS best practices integrated into React components to enhance the user experience and accessibility.
 
-### `npm start`
+View the [design and component previews on Figma](https://www.figma.com/design/GqVOKP4tg1LIic2D6K2Oz4/Certification-Meta-Project?node-id=14-360&t=PjrMfE4K76iX1PtD-1).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Learning Objectives
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Set up a React application
+- Commit the project into a Git repository
+- Plan and implement an effective UI/UX
 
-### `npm test`
+## Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Semantic HTML structure integrated into React JSX
+- Responsive web design with CSS Grid and Flexbox
+- Meta tags and Open Graph protocol setup for SEO and social media platforms
+- Form validation and error handling for user inputs
 
-### `npm run build`
+## Exercises Included
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. **HTML Document Setup:** Implement the foundational semantic HTML elements.
+2. **React Components:** Split the application's sections into individual React components like Header, Nav, Main, and Footer.
+3. **API Connection:** Set up the components to fetch available reservation times from an API and handle form submissions.
+4. **Testing:** Write unit tests for React components to ensure the application functions correctly.
+5. **Accessibility:** Enhance accessibility through ARIA attributes and proper labeling.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Clone the repository, navigate to the project directory, and install dependencies:
 
-### `npm run eject`
+```bash
+git clone https://github.com/your-github-username/little-lemon.git
+cd little-lemon
+npm install
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Running the Application
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+To start the application, run:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+npm start
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+This will launch the application on `http://localhost:3000` where you can view and interact with the web app.
 
-## Learn More
+## Contributing
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Contributions are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Please make sure to update tests as appropriate.
 
-### Code Splitting
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[MIT](https://choosealicense.com/licenses/mit/)
